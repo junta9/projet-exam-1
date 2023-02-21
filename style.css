@@ -1,5 +1,5 @@
 @font-face {
-  font-family: segoePR;
+  font-family: "segoepr";
   src: url(/assets/fonts/segoepr.ttf);
 }
 * {
@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "segoePR";
+  font-family: "segoepr";
   height: 100vh;
   background-color: #c3bfa1;
 }
@@ -117,6 +117,15 @@ header {
 }
 .resume {
     font-weight: bold;
+}
+.prix-details a.btn {
+  background-color: #627551;
+  margin-bottom: 10px;
+  width: 20%;
+  font-weight: bold;
+}
+.prix-details a.btn:hover {
+  background-color: #62755196;
 }
 @media screen and (min-width: 769px) {
   .brand a {
