@@ -1,5 +1,5 @@
 @font-face {
-  font-family: segoePR;
+  font-family: "segoepr";
   src: url(/assets/fonts/segoepr.ttf);
 }
 * {
@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "segoePR";
+  font-family: "segoepr";
   height: 100vh;
   background-color: #c3bfa1;
 }
