@@ -7,19 +7,32 @@
 
 body {
     display: flex;
+    min-height: 100vh;
+}
+.photo {
+    background-image: url(./images/rice-fields-g65d4ea483_1920.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50%;
+}
+.form {
+    display: flex;
     justify-content: center;
     align-items: center;
+    width: 50%;
     min-height: 100vh;
     flex-direction: column;
     gap: 30px;
-    background: #1d2b3a;
+    background: #aeb78e;
 }
 p {
-    color: rgba(255, 255, 255, 0.25);
+    color: rgb(65, 65, 65);
+    font-size: 1.2em;
+    text-align: center;
 }
 a {
     text-decoration: none;
-    color: #00dfc4;
+    color: black;
 }
 
 .inputBox {
@@ -68,4 +81,13 @@ a {
 .inputBox input:valid,
 .inputBox input:focus {
     border: 1px solid #00dfc4;
+}
+
+@media screen and (max-width: 768px) {
+    .photo {
+        display: none;
+    }
+    .form {
+        width: 100%;
+    }
 }
