@@ -11,3 +11,68 @@ Withlocals : une plateforme de voyage qui met en relation les voyageurs avec des
 Vayable : une entreprise qui propose des activités de voyage uniques, organisées par des locaux passionnés, pour découvrir leur ville ou leur région de manière authentique.
 
 Ces entreprises peuvent être considérées comme des concurrents de Tribeshomestay, bien qu'elles aient chacune leur propre approche en matière de voyage. Les différences entre ces entreprises peuvent notamment se trouver dans les types d'expériences proposées, les destinations, les tarifs ou encore les services supplémentaires offerts.
+
+
+***********************code php pour gerer et verifier les dates disponibles********************
+
+// Début de la transaction
+$db->beginTransaction();
+
+try {
+  // Vérifie la disponibilité pour les dates demandées
+  $sql = "SELECT COUNT(*) FROM reservations WHERE id_sejour = :id_sejour AND date_debut <= :date_fin AND date_fin >= :date_debut FOR UPDATE";
+  $stmt = $db->prepare($sql);
+  $stmt->execute([
+    'id_sejour' => $id_sejour,
+    'date_debut' => $date_debut,
+    'date_fin' => $date_fin
+  ]);
+  $count = $stmt->fetchColumn();
+
+  // Si la disponibilité est confirmée, ajoute la réservation à la base de données
+  if ($count == 0) {
+    $total_prix = $prix * $nombre_chambres * $nombre_nuits;
+    $sql = "INSERT INTO reservations (id_sejour, date_debut, date_fin, nombre_chambres, nombre_personnes, total_prix, nom, prenom, email, telephone, date_reservation) VALUES (:id_sejour, :date_debut, :date_fin, :nombre_chambres, :nombre_personnes, :total_prix, :nom, :prenom, :email, :telephone, NOW())";
+    $stmt = $db->prepare($sql);
+    $stmt->execute([
+      'id_sejour' => $id_sejour,
+      'date_debut' => $date_debut,
+      'date_fin' => $date_fin,
+      'nombre_chambres' => $nombre_chambres,
+      'nombre_personnes' => $nombre_personnes,
+      'total_prix' => $total_prix,
+      'nom' => $nom,
+      'prenom' => $prenom,
+      'email' => $email,
+      'telephone' => $telephone
+   ]);
+
+// Envoie un email de confirmation de réservation
+$to = $email;
+$subject = "Confirmation de réservation pour le séjour " . $sejour['titre'];
+$message = "Bonjour " . $prenom . ",\n\nNous vous confirmons votre réservation pour le séjour " . $sejour['titre'] . " du " . date('d/m/Y', strtotime($date_debut)) . " au " . date('d/m/Y', strtotime($date_fin)) . " pour " . $nombre_personnes . " personne(s) dans " . $nombre_chambres . " chambre(s).\n\nLe montant total de votre séjour est de " . $total_prix . " euros.\n\nMerci de votre confiance et à bientôt !";
+$headers = "From: info@monsite.com\r\n";
+mail($to, $subject, $message, $headers);
+
+// Valide la transaction
+$db->commit();
+
+// Redirige l'utilisateur vers une page de confirmation
+header('Location: confirmation.php');
+exit();
+
+} else {
+// Annule la transaction si la disponibilité n'est pas confirmée
+$db->rollBack();
+
+// Affiche un message d'erreur
+$message = "Désolé, les dates que vous avez choisies ne sont pas disponibles pour ce séjour.";
+
+}
+} catch (Exception $e) {
+// Annule la transaction en cas d'erreur
+$db->rollBack();
+
+// Affiche un message d'erreur
+$message = "Une erreur est survenue lors de la réservation : " . $e->getMessage();
+}
