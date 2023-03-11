@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap");
 @font-face {
   font-family: "segoepr";
   src: url(/assets/fonts/segoepr.ttf);
@@ -8,9 +9,17 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "segoepr";
+  font-family: "Outfit", sans-serif;
   height: 100vh;
   background-color: #c3bfa1;
+}
+footer p,
+.font-outfit {
+  font-family: "Outfit", sans-serif;
+}
+p,
+span {
+  font-family: "segoepr";
 }
 header {
   /* opacity: 0.9; */
@@ -89,12 +98,20 @@ header {
 .laos h3,
 .vietnam h3 {
   background-color: #707015;
+  color: #f3edc3;
   margin-top: 10px;
   padding: 5px 0;
+  border-radius: 6px;
+  /* text-shadow: 0 0 5px black; */
 }
+
 .image {
   display: flex;
   flex-direction: column;
+}
+.image img {
+  border-radius: 6px;
+  object-fit: cover;
 }
 .image span {
   background-color: #f9e03b;
@@ -116,12 +133,13 @@ header {
   padding: 0;
 }
 .resume {
-    font-weight: bold;
+  font-weight: bold;
 }
 .prix-details a.btn {
   background-color: #627551;
   margin-bottom: 10px;
-  width: 20%;
+  width: 40%;
+  max-width: 150px;
   font-weight: bold;
 }
 .prix-details a.btn:hover {
@@ -136,14 +154,14 @@ header {
   }
   .cover {
     display: block;
-    height: 100vh;
+    height: 90vh;
     width: 100vw;
     background-position: center;
   }
   .cover-presentation {
     background-color: rgba(255, 255, 255, 0.505);
     position: absolute;
-    bottom: 15%;
+    bottom: 20%;
     left: 10%;
     width: 80%;
     font-size: 1em;
@@ -202,12 +220,16 @@ header {
     border: 1px solid rgba(0, 0, 0, 0.144);
     border-radius: 10px;
   }
-  /* .image {
+  .image {
     position: relative;
-  } */
+  }
   .image span {
-    position: inherit;
+    position: absolute;
+    top: 82%;
+    left: inherit!important;
+    right: inherit;
     width: 100%;
+    height: 30px;
     max-width: 400px;
   }
   .thailande,
@@ -217,9 +239,12 @@ header {
   }
 }
 @media screen and (min-width: 1050px) {
-    article {
-        overflow: hidden;
-    }
+  article {
+    overflow: hidden;
+  }
+  .cover {
+    background-position: center 30%;
+  }
   .image {
     position: relative;
   }

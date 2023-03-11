@@ -15,6 +15,65 @@ Ces entreprises peuvent être considérées comme des concurrents de Tribeshomes
 
 ***********************code php pour gerer et verifier les dates disponibles********************
 
+
+Table "sejour":
+
+id_sejour: INT, PRIMARY KEY, auto_increment
+nom_sejour: VARCHAR(255)
+description: TEXT
+pays: VARCHAR(255)
+ville: VARCHAR(255)
+prix: FLOAT
+
+Table "photos_sejour" :
+
+id_photo (clé primaire)
+id_sejour (clé étrangère faisant référence à la table "annonces")
+url_photo
+
+Table "reservation":
+
+id_reservation: INT, PRIMARY KEY, auto_increment
+id_sejour: INT, FOREIGN KEY REFERENCES sejours(id_sejour)
+id_user
+date_debut: DATE
+date_fin: DATE
+nombre_chambres: INT
+nombre_personnes: INT
+total_prix: FLOAT
+nom: VARCHAR(255)
+prenom: VARCHAR(255)
+email: VARCHAR(255)
+telephone: VARCHAR(255)
+date_reservation: TIMESTAMP
+
+Table "disponibilités" :
+
+id (int, clé primaire, auto-incrément)
+id_maison (int, clé étrangère vers la table "maisons")
+date_debut (date)
+date_fin (date)
+
+Table payments :
+
+payment_id (int, primary key)
+user_id (int, foreign key vers users)
+booking_id (int, foreign key vers bookings)
+payment_date (datetime)
+payment_amount (decimal)
+payment_status (varchar)
+
+Table "commentaires" :
+
+id_commentaire (clé primaire)
+id_user (clé étrangère faisant référence à la table "user")
+id_sejour (clé étrangère faisant référence à la table "sejour")
+commentaire
+note
+date_commentaire
+
+
+
 // Début de la transaction
 $db->beginTransaction();
 
