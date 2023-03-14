@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap");
 @font-face {
-  font-family: "segoepr", sans-serif;
+  font-family: "segoepr";
   src: url("/assets/fonts/segoepr.ttf");
 }
 * {
