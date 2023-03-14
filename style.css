@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap");
 @font-face {
-  font-family: "segoepr";
-  src: url(/assets/fonts/segoepr.ttf);
+  font-family: "segoepr", sans-serif;
+  src: url("/assets/fonts/segoepr.ttf");
 }
 * {
   margin: 0;
@@ -19,7 +19,7 @@ footer p,
 }
 p,
 span {
-  font-family: "segoepr";
+  font-family: "segoepr", sans-serif;
 }
 header {
   /* opacity: 0.9; */
