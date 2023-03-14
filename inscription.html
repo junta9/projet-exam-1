@@ -18,12 +18,15 @@
             <span>E-mail</span>
         </div>
         <div class="inputBox">
-            <input type="text" required="required" name="pwd">
+            <input class="myPass" type="password" required="required" name="pwd">
             <span>Password</span>
         </div>
         <div class="inputBox">
-            <input type="text" required="required" name="verif_pwd">
+            <input class="myPass" type="password" required="required" name="verif_pwd">
             <span>Password</span>
+        </div>
+        <div>
+            <input id="checkBox" type="checkbox" onclick="showPass()">Show Password
         </div>
         <div class="inputButton">
             <input type="submit" value="Envoyer" class="btn btn-dark">
@@ -31,5 +34,7 @@
         <p>Revenir à la page de connexion <a href="./connexion.html">ici</a></p>
         <p>Retour à l'accueil <a href="./index.html">ici</a></p>
     </form>
+
+    <script src="script.js"></script>
 </body>
 </html>
