@@ -134,4 +134,199 @@ $db->rollBack();
 
 // Affiche un message d'erreur
 $message = "Une erreur est survenue lors de la réservation : " . $e->getMessage();
+
 }
+****************************************
+
+Table "Clients":
+
+ID_Client (clé primaire)
+Nom
+Prénom
+Adresse
+Adresse email
+Numéro de téléphone
+Table "Séjours":
+
+ID_Séjour (clé primaire)
+Titre
+Description
+Durée
+Prix
+Dates disponibles
+Table "Réservations":
+
+ID_Réservation (clé primaire)
+ID_Client (clé étrangère de la table "Clients")
+ID_Séjour (clé étrangère de la table "Séjours")
+Date de début
+Date de fin
+Montant payé
+Table "Paiements":
+
+ID_Paiement (clé primaire)
+ID_Client (clé étrangère de la table "Clients")
+Montant payé
+Date de paiement
+Table "Photos":
+
+ID_Photo (clé primaire)
+ID_Séjour (clé étrangère de la table "Séjours")
+Nom de fichier
+Lien URL
+La table "Photos" vous permettra de stocker les images de vos séjours touristiques. 
+Chaque séjour peut avoir plusieurs photos, donc la table est liée à la table "Séjours" via une clé étrangère "ID_Séjour". 
+Vous pouvez stocker le nom de fichier de l'image ainsi que son lien URL pour faciliter l'affichage sur votre site web.
+
+Super ! Symfony est un excellent choix pour développer un site e-commerce. Il offre un ensemble complet de fonctionnalités et de composants pour la gestion des bases de données, la validation de formulaires, la sécurité, la génération de vues et bien plus encore.
+
+Voici les étapes que vous pouvez suivre pour commencer à travailler sur votre projet de site e-commerce en Symfony :
+
+Installation de Symfony : Vous pouvez installer Symfony en utilisant le gestionnaire de packages Composer. La documentation officielle de Symfony contient des instructions détaillées sur l'installation et la configuration.
+
+Création de la base de données : Vous pouvez utiliser Doctrine, le gestionnaire d'ORM (Object-Relational Mapping) de Symfony, pour créer et gérer votre base de données. 
+Vous pouvez définir vos entités, qui sont des classes PHP qui correspondent à des tables de la base de données, et Doctrine se charge de créer et de maintenir les tables de la base de données en fonction de la définition de ces entités.
+
+Gestion des images : Pour stocker les images de vos séjours, vous pouvez utiliser un système de stockage de fichiers comme Amazon S3 ou Google Cloud Storage. Symfony dispose d'une bibliothèque appelée Flysystem qui facilite l'utilisation de ces systèmes de stockage.
+
+Création du formulaire de réservation : Vous pouvez utiliser le composant de formulaire de Symfony pour créer un formulaire de réservation pour vos séjours. Ce composant fournit une API conviviale pour créer des formulaires, définir des règles de validation, afficher des messages d'erreur et gérer les données soumises.
+
+Implémentation du paiement en ligne : Pour gérer les paiements en ligne, vous pouvez utiliser un service de paiement tiers comme Stripe ou PayPal. Symfony a des bundles (paquets) qui permettent de simplifier l'intégration de ces services de paiement.
+
+Sécurité : Pour protéger votre site e-commerce contre les attaques, Symfony fournit des outils pour gérer l'authentification, l'autorisation et les mesures de sécurité en général.
+
+Tests et déploiement : Enfin, vous devrez tester votre site e-commerce pour vous assurer que tout fonctionne correctement. Symfony a des outils pour faciliter les tests unitaires, les tests fonctionnels et les tests de bout en bout. Pour déployer votre site, vous pouvez utiliser une plate-forme d'hébergement comme Heroku, AWS ou Google Cloud.
+
+Configurez le bundle en définissant le répertoire d'upload et les paramètres de stockage. Vous pouvez définir les paramètres de stockage dans le fichier de configuration "config/packages/vich_uploader.yaml". Voici un exemple de configuration pour utiliser Amazon S3 :
+
+yaml
+Copy code
+vich_uploader:
+    db_driver: orm
+    storage: gaufrette
+    gaufrette: amazon_s3
+    mappings:
+        photos:
+            uri_prefix: '%env(APP_PHOTOS_URI_PREFIX)%'
+            upload_destination: '%env(APP_PHOTOS_UPLOAD_DESTINATION)%'
+            filesystem_service: 'vich_uploader.adapter.filesystem_service.default'
+            namer: 'vich_uploader.namer_uniqid'
+            delete_on_remove: true
+Notez que vous devez définir les variables d'environnement APP_PHOTOS_URI_PREFIX et APP_PHOTOS_UPLOAD_DESTINATION pour définir l'URI prefix (préfixe d'URI) et l'emplacement de stockage des fichiers.
+
+Créez votre entité pour les séjours et ajoutez une propriété pour stocker les photos. Vous pouvez utiliser l'annotation Vich\UploadableField pour définir les paramètres d'upload de la photo. Voici un exemple :
+
+php
+Copy code
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
+/**
+ * @ORM\Entity
+ * @Vich\Uploadable
+ */
+class Sejour
+{
+    /**
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $titre;
+
+    /**
+     * @Vich\UploadableField(mapping="photos", fileNameProperty="photoName")
+     */
+    private $photoFile;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $photoName;
+
+    // ... autres propriétés et méthodes
+}
+Ajoutez un champ de formulaire pour le téléchargement de la photo dans votre formulaire de création/édition de séjour. Vous pouvez utiliser le type de champ FileType fourni par Symfony pour cela. Voici un exemple :
+
+rust
+Copy code
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+
+// ...
+
+$builder
+    ->add('titre')
+    ->add('photoFile', FileType::class)
+    // ... autres champs de formulaire
+;
+Gérez l'upload de la photo dans votre contrôleur de formulaire. Vous pouvez utiliser la méthode handleRequest() de l'objet Form pour récupérer les données soumises et gérer l'upload de la photo. Voici un exemple :
+
+perl
+Copy code
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+// ...
+
+
+
+
+vangchou@outlook.fr
+reécris a partir de etape 5
+Bien sûr, je reprends à partir de l'étape 5 :
+
+Dans votre contrôleur de formulaire, vous devez gérer l'upload de la photo. Vous pouvez utiliser la méthode handleRequest() de l'objet Form pour récupérer les données soumises et vérifier si une photo a été envoyée avec le formulaire. Si une photo a été envoyée, vous pouvez utiliser le service VichUploader pour gérer l'upload de la photo et mettre à jour la propriété de la photo de votre entité. Voici un exemple :
+
+php
+Copy code
+use App\Entity\Sejour;
+use App\Form\SejourType;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+class SejourController extends AbstractController
+{
+    public function create(Request $request): Response
+    {
+        $sejour = new Sejour();
+        $form = $this->createForm(SejourType::class, $sejour);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+
+            // Vérifiez si une photo a été envoyée
+            if ($sejour->getPhotoFile()) {
+                // Utilisez le service VichUploader pour gérer l'upload de la photo
+                $photoUploader = $this->get('Vich\UploaderBundle\Handler\UploadHandler');
+                $photoUploader->upload($sejour, 'photoFile');
+
+                // Mettez à jour la propriété de la photo de votre entité
+                $sejour->setPhotoName($sejour->getPhotoFile()->getFilename());
+            }
+
+            $em->persist($sejour);
+            $em->flush();
+
+            // Redirigez l'utilisateur vers une page de confirmation
+            return $this->redirectToRoute('sejour_confirmation');
+        }
+
+        return $this->render('sejour/create.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+    // ... autres méthodes de contrôleur
+}
+Dans votre vue, vous pouvez afficher la photo de votre séjour en utilisant l'URI de la photo stockée dans la propriété de la photo de votre entité. Si vous stockez les photos dans un service de stockage de fichiers tel que Amazon S3, vous pouvez utiliser l'URI de préfixe défini dans votre configuration pour construire l'URL complète de la photo. Voici un exemple :
+
+php
+Copy code
+<img src="{{ app.request.scheme ~ '://' ~ app.request.host ~ sejour.photoName }}" alt="{{ sejour.titre }}">
+Dans cet exemple, nous utilisons la méthode app.request.scheme pour récupérer le schéma de l'URL (http ou https), la méthode app.request.host pour récupérer le nom d'hôte de l'URL, et nous concaténons l'URI de la photo stockée dans la propriété de la photo de l'entité.
