@@ -18,6 +18,9 @@ footer p,
 a {
   font-family: "Outfit", sans-serif;
 }
+footer a {
+  background-color: inherit;
+}
 p,
 span {
   font-family: "segoepr", sans-serif;
@@ -37,7 +40,7 @@ header {
 .brand a {
   display: none;
 }
-.trait {
+/* .trait {
   display: block;
   content: "";
   width: 50%;
@@ -45,7 +48,7 @@ header {
   background-color: rgb(56, 55, 55);
   transform: translateX(50%);
   margin: 20px 0 20px 0;
-}
+} */
 .nav-link.btn {
   background-color: #f9e03b;
   padding: 2px 10px;
@@ -131,5 +134,57 @@ a {
   max-height: 350px;
   width: auto;
   object-fit: cover;
+}
+.card {
+  background-color: #e7e2bd;
+  box-shadow: 2px 2px 5px rgb(76, 74, 74);
+}
+.card a {
+  background-color: #f9e03b;
+  border: none;
+  color: black;
+}
+
+@media screen and (min-width: 768px) {
+  .brand a {
+    display: block;
+  }
+  .titre {
+    display: none;
+  }
+  .cover {
+    display: block;
+    height: 90vh;
+    width: 100vw;
+    background-position: center;
+  }
+  .cover-presentation {
+    background-color: rgba(255, 255, 255, 0.505);
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    width: 80%;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .cover-presentation p {
+    width: 80%;
+    padding-top: 20px;
+  }
+
+  article h3 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+}
+
+@media screen and (min-width: 1200px) {
+  .catalog {
+    margin-right: 100px;
+    margin-left: 100px;
+  }
 }
 
