@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap");
+@font-face {
+  font-family: "segoepr";
+  src: url("/assets/fonts/segoepr.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Outfit", sans-serif;
+  height: 100vh;
+  background-color: #e2e0ce;
+}
+footer p,
+.font-outfit,
+a, .resume {
+  font-family: "Outfit", sans-serif;
+}
+footer a {
+  background-color: inherit;
+}
+p,
+span {
+  font-family: "segoepr", sans-serif;
+}
+header {
+  /* opacity: 0.9; */
+  width: 100%;
+  /* position: absolute; */
+}
+#menuScroll {
+  background-color: #333; /* Black background color */
+  /*position: fixed; /* Make it stick/fixed */
+  top: 0; /* Stay on top */
+  width: 100%; /* Full width */
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
+}
+.brand a {
+  display: none;
+}
+/* .trait {
+  display: block;
+  content: "";
+  width: 50%;
+  height: 2px;
+  background-color: rgb(56, 55, 55);
+  transform: translateX(50%);
+  margin: 20px 0 20px 0;
+} */
+.nav-link.btn {
+  background-color: #f9e03b;
+  padding: 2px 10px;
+}
+.menu-bouton {
+  background-color: black !important;
+}
+section {
+  margin-top: 100px;
+}
+section h3 {
+  background-color: #707015;
+  color: #f3edc3;
+  margin-top: 10px;
+  padding: 5px 0;
+  /* border-radius: 6px; */
+}
+.image {
+  position: relative;
+  padding: 0;
+}
+
+.image span {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  background-color: #f9e03b;
+  font-size: 0.8em;
+  width: 100%;
+  padding: 5px 0;
+}
+.sejour-card {
+  background-color: #c3bfa1;
+}
+
+
+
+@media screen and (min-width: 500px) {
+  .brand a {
+    display: block;
+  }
+  .image span {
+    font-size: 1.2em;
+  }
+  .karen-img img {
+    width: 768px;
+  }
+  
+}
+
+@media screen and (min-width: 990px) {
+  
+  .thailande,
+  .laos,
+  .vietnam {
+    border: 1px solid rgba(0, 0, 0, 0.144);
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgb(76, 74, 74);
+  }
+  .image {
+    margin: 5px 0;
+  }
+  .image img {
+    border-radius: 5px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  
+}
+

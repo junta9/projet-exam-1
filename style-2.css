@@ -11,7 +11,7 @@
 body {
   font-family: "Outfit", sans-serif;
   height: 100vh;
-  /* background-color: #c3bfa1; */
+  background-color: #e2e0ce;
 }
 footer p,
 .font-outfit,
@@ -90,6 +90,12 @@ header {
   padding-top: 20px;
   font-weight: bold;
 }
+.quijesuis {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
 .quijesuis h2, .text-center h2 {
   background-color: rgb(14, 14, 14);
   font-size: 1.5em;
@@ -107,14 +113,14 @@ header {
 .sejours p {
   padding: 20px 0;
 }
-a {
+/* a {
   text-decoration: none;
   background-color: rgb(14, 14, 14);
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
   float: right;
-}
+} */
 .card-sejour {
   /* background-color: #c3bfa1; */
   padding: 5px 10px;
@@ -136,14 +142,31 @@ a {
   object-fit: cover;
 }
 .card {
-  background-color: #e7e2bd;
+  background-color: #c3bfa1;
   box-shadow: 2px 2px 5px rgb(76, 74, 74);
+  border: none;
 }
 .card a {
-  background-color: #f9e03b;
+  /* background-color: #f9e03b; */
+  background-color: black;
   border: none;
-  color: black;
+  /* color: black; */
+  float: right;
 }
+
+.carousel-item img {
+  max-height: 500px;
+  object-fit: cover;
+}
+.carousel-description {
+  background-color: rgba(255, 255, 255, 0.505);
+  border-radius: 10px;
+}
+.carousel-description p, .carousel-description h5 {
+  color: black;
+  font-family: "Outfit", sans-serif;
+}
+
 
 @media screen and (min-width: 768px) {
   .brand a {
@@ -185,6 +208,21 @@ a {
   .catalog {
     margin-right: 100px;
     margin-left: 100px;
+  }
+  .quijesuis {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* margin-right: 100px;
+    margin-left: 100px; */
+  }
+  .quijesuis div h2 {
+    margin-right: 100px;
+    margin-left: 100px;
+  }
+  .quijesuis article {
+    margin-right: 50px;
+    margin-left: 50px;
   }
 }
 

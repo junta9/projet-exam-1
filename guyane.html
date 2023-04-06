@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="guyane.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark bg-dark fixed-top" id="menuScroll">
+            <div class="container-fluid justify-content-end w-100">
+                <div class="d-flex w-100 col">
+                    <div class="d-flex brand">
+                        <a class="navbar-brand text-uppercase" href="./index.html">Tribeshomestay</a>
+                    </div>
+                    <div class="d-flex justify-content-end px-3 col align-items-center">
+                        <a class="nav-link btn" href="./connexion.html">Se connecter</a>
+                    </div>
+                </div>
+                <button class="navbar-toggler menu-bouton" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                    aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title text-white" id="offcanvasDarkNavbarLabel">Séjours</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="./thailande.html">Thailande</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="./laos.html">Laos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="./vietnam.html">Vietnam</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#joinModal2">Réservation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#joinModal1">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="container-fluid g-0" id="guyane">
+        <div class="description text-center">
+            <h2>Nos séjours en Guyane Francaise</h2>
+        </div>
+        <div class="container-fluid row sejours w-100 justify-content-lg-evenly my-lg-4 g-0">
+            <article class="col-xl-5 sejour-card hmong guyane text-center my-lg-3 p-4">
+                <div class="row text-center align-items-center p-2">
+                    <h3>Chez les Hmong</h3>
+                    <p class="resume text-start pt-4">
+                        La communauté Hmong de Guyane est une petite communauté ethnique d'environ 2 500 personnes, qui
+                        est originaire des montagnes du Laos, du Vietnam et de la Chine. Les Hmong ont immigré en Guyane
+                        dans les années 70, après la guerre du Vietnam.
+                    </p>
+                    <div class="image">
+                        <img src="./images/marche_cacao.jpg" class="img-fluid" alt="La place du marché vue de l'exterieur">
+                        <span>
+                            La place du marché vue de l'exterieur
+                        </span>
+                    </div>
+                    <p class="resume text-start pt-2">
+                        La vie des Hmong de Guyane est centrée sur l'agriculture, la pêche et la chasse. Les Hmong
+                        cultivent principalement du riz, des légumes et des fruits, ainsi que du manioc, une plante
+                        importante dans leur culture alimentaire. Les Hmong de Guyane sont également connus pour leur
+                        pratique de la pêche traditionnelle, notamment la pêche aux crevettes dans les rivières et les
+                        marais environnants. La chasse est également une activité importante pour les Hmong de Guyane,
+                        qui chassent souvent le gibier dans la forêt pour compléter leur alimentation.
+                    </p>
+                    <div class="image">
+                        <img src="./images/marche_cacao_1.jpg" class="img-fluid" alt="Femme Hmong sur le marché">
+                        <span>
+                            Femme Hmong sur le marché
+                        </span>
+                    </div>
+                    <p class="resume text-start pt-2">
+                        La religion et la culture jouent un rôle important dans la vie des Hmong de Guyane. Les Hmong
+                        pratiquent une forme d'animisme, qui implique la croyance en des esprits qui habitent les objets
+                        et les éléments de la nature. La culture Hmong est riche et diversifiée, et elle se reflète dans
+                        leur artisanat, leur musique et leur danse. Les Hmong de Guyane sont connus pour leur
+                        habillement traditionnel coloré, orné de broderies et de motifs complexes, ainsi que pour leur
+                        artisanat, notamment la fabrication de bijoux, de vêtements et de tissus. La musique et la danse
+                        Hmong sont également très populaires, et elles sont souvent associées à des événements tels que
+                        les mariages, les funérailles et les festivals.
+                    </p>
+                    <div class="image">
+                        <img src="./images/hmong_guyane.jpg" class="img-fluid" alt="Filles Hmong en costume traditionnelle">
+                        <span>
+                            Filles Hmong en costume traditionnelle
+                        </span>
+                    </div>
+                    <p class="resume text-start pt-2">
+                        En visitant la communauté Hmong de Guyane, vous pourrez découvrir leur mode de vie traditionnel,
+                        leur culture unique et leur artisanat fascinant. Vous pourrez également participer à des
+                        activités telles que la randonnée, l'exploration des paysages naturels magnifiques de la région,
+                        ainsi que l'expérience de la pêche traditionnelle et de la chasse avec des techniques locales.
+                        Les Hmong de Guyane sont des hôtes chaleureux et accueillants, et ils seront ravis de partager
+                        leur culture avec vous.
+                    </p>
+                    <p class="resume text-start pt-2">
+                        En résumé, une visite chez les Hmong de Guyane est une expérience unique et enrichissante, où
+                        vous pourrez découvrir une culture millénaire et un mode de vie traditionnel préservé dans un
+                        cadre naturel magnifique.
+                    </p>
+                    <div class="prix-details">
+                        <p class="font-outfit">
+                            Séjour de 4 nuits<br>
+                            Du lundi au vendredi<br>
+                            Chambre de 6 couchages<br>
+                            Prix de séjour: 300 €
+                        </p>
+                        <a href="#" class="btn btn-dark" data-bs-toggle="modal"
+                            data-bs-target="#joinModal2">Réserver</a>
+                    </div>
+                </div>
+            </article>
+            <article class="col-xl-5 sejour-card kalinas guyane text-center p-4 my-lg-3">
+                <div class="row text-center align-items-center p-2">
+                    <h3>Chez les Kalinas</h3>
+                    <p class="resume text-start pt-4">
+                        La communauté Kalina de Guyane, également connue sous le nom de Caribs, est une communauté
+                        amérindienne qui a vécu dans la région depuis des milliers d'années. Les Kalinas sont connus
+                        pour
+                        leur riche culture et leur mode de vie traditionnel basé sur la chasse, la pêche et la
+                        cueillette.
+                    </p>
+                    <div class="image">
+                        <img src="./images/img-15.jpg" class="img-fluid" alt="Hutte Kalina">
+                        <span>
+                            Hutte Kalina
+                        </span>
+                    </div>
+                    <p class="resume text-start pt-2">
+                        La communauté Kalina de Guyane est répartie dans plusieurs villages situés dans la région de
+                        Sinnamary, ainsi que dans d'autres parties de la Guyane française. Les Kalinas vivent
+                        principalement
+                        de la chasse, de la pêche et de la cueillette, mais ils pratiquent également l'agriculture pour
+                        compléter leur alimentation. Les cultures les plus couramment cultivées comprennent la banane,
+                        le
+                        manioc, la patate douce et les fruits tropicaux.
+                    </p>
+                    <div class="image">
+                        <img src="./images/43070410844_cd489db760_b.jpg" class="img-fluid"
+                            alt="Homme Kalina">
+                        <span>
+                            Homme Kalina
+                        </span>
+                    </div>
+                    <p class="resume text-start pt-2">
+                        La religion et la culture sont des éléments clés de la vie des Kalinas. Les Kalinas pratiquent
+                        une
+                        forme d'animisme, qui implique la croyance en des esprits qui habitent les objets et les
+                        éléments de
+                        la nature. La musique et la danse sont également très importantes pour les Kalinas, et ils sont
+                        connus pour leur tambour traditionnel, le Kasékó, ainsi que pour leur danse de la carapace de
+                        tortue, une danse traditionnelle qui célèbre les cycles naturels de la vie.
+                    </p>
+                    <div class="image">
+                        <img src="./images/32-les-kalinas-de-guyane-500-9gK2QrBl7P8-su9v0o2pE1H.1400x1400.jpg"
+                            class="img-fluid" alt="Lors d'une fete traditionnelle">
+                        <span>
+                            Lors d'une fete traditionnelle
+                        </span>
+                    </div>
+                    <p class="resume text-start pt-2">
+                        En visitant la communauté Kalina de Guyane, vous pourrez découvrir leur mode de vie traditionnel
+                        et
+                        leur culture unique. Vous pourrez également participer à des activités telles que la randonnée
+                        dans
+                        la forêt tropicale, la découverte de la faune et de la flore locales, ainsi que la pêche et la
+                        chasse avec des techniques traditionnelles. Les Kalinas sont des hôtes chaleureux et
+                        accueillants,
+                        et ils seront ravis de partager leur culture avec vous.
+                    </p>
+                    <p class="resume text-start pt-2">
+                        En résumé, une visite chez les Kalinas de Guyane est une expérience unique et immersive, où vous
+                        pourrez découvrir une culture millénaire et un mode de vie traditionnel préservé dans un cadre
+                        naturel magnifique.
+                    </p>
+                    <div class="prix-details">
+                        <p class="font-outfit">
+                            Séjour de 4 nuits<br>
+                            Du lundi au vendredi<br>
+                            Chambre de 6 couchages<br>
+                            Prix de séjour: 300 €
+                        </p>
+                        <a href="#" class="btn btn-dark" data-bs-toggle="modal"
+                            data-bs-target="#joinModal2">Réserver</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="trait"></div>
+    </section>
+    <footer class="navbar navbar-expand-lg bg-dark navbar-dark pb-2">
+        <div class="container justify-content-center">
+            <div class="row text-center">
+                <div class="row-cols-lg-1 align-items-start fs-4 text-white">
+                    Nous suivre sur
+                </div>
+                <nav>
+                    <div class="justify-content-center">
+                        <div>
+                            <ul class="d-flex reseau-sociaux justify-content-evenly m-0 p-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="#fff" class="bi bi-twitter" viewBox="0 0 16 16">
+                                            <path
+                                                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                                        </svg></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="#fff" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                                        </svg></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href=""><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="#fff" class="bi bi-facebook" viewBox="0 0 16 16">
+                                            <path
+                                                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                                        </svg></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="mt-2">
+                    <p class="text-white">Site crée par Chou VANG</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- **********************MODAL CONTACT****************** -->
+    <div class="modal fade" id="joinModal1" tabindex="-1" role="dialog" aria-labelledby="joinModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="joinModalLabel">
+                        Envoyer nous un message
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label for="name">Nom</label>
+                        <input type="text" class="form-control" id="name" name="name" />
+                        <label for="email">e-mail</label>
+                        <input type="email" class="form-control" id="email" name="email" />
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Fermer
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        Envoyer le message
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ****************************MODAL RESERVATION**************** -->
+    <div class="modal fade" id="joinModal2" tabindex="-1" role="dialog" aria-labelledby="joinModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="joinModalLabel">
+                        Formulaire de réservation
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="m-3">
+                            <label for="name">Séjours</label>
+                            <select class="form-control" name="pays" id="pays" class="w-100">
+                                <option value="">Pays</option>
+                                <option value="thailande">Thailande</option>
+                                <option value="laos">Laos</option>
+                                <option value="vietnam">Vietnam</option>
+                            </select>
+                        </div>
+                        <div class="m-3">
+                            <label for="ethnie">Chez qui ?</label>
+                            <select class="form-control" name="locals" id="locals" class="w-100">
+                                <option value="">Ethnie</option>
+                                <option value="hmong">Hmong</option>
+                                <option value="akha">Akha</option>
+                                <option value="lolos">Lolos noir</option>
+                            </select>
+                        </div>
+                        <div class="m-3">
+                            <label for="customers">Nombre de personnse</label>
+                            <input class="form-control" type="number" class="w-100">
+                        </div>
+                        <div class="m-3">
+                            <label for="arrival">Date d'arrivée</label>
+                            <input class="form-control" type="date" class="w-100">
+                        </div>
+                        <div class="m-3">
+                            <label for="departure">Date de départ</label>
+                            <input class="form-control" type="date" class="w-100">
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Fermer
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        Ajouter au panier
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
