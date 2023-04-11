@@ -9,6 +9,8 @@ window.onscroll = function () {
   prevScrollpos = currentScrollPos;
 };
 
+// ******************************
+
 function showPass() {
   const passwords = document.querySelectorAll(".myPass");
   passwords.forEach((password) => {
@@ -19,3 +21,23 @@ function showPass() {
     }
   });
 }
+
+// ****************************
+
+const scrollContainers = document.querySelectorAll(".scroll-media");
+const viewScreen = window.matchMedia("(min-width: 990px)");
+
+function scrollMedia(viewScreen) {
+  if (viewScreen.matches) {
+    scrollContainers.forEach((scrollContainer) => {
+      scrollContainer.addEventListener("wheel", (e) => {
+        e.preventDefault();
+        scrollContainer.scrollLeft += e.deltaY * 2;
+      });
+    });
+  }
+}
+scrollMedia(viewScreen);
+viewScreen.addEventListener(scrollMedia);
+
+// **************************

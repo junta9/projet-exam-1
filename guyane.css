@@ -69,6 +69,10 @@ section h3 {
 .image {
   position: relative;
   padding: 0;
+
+}
+.image img {
+  border-radius: 5px;
 }
 
 .image span {
@@ -100,6 +104,20 @@ section h3 {
 }
 
 @media screen and (min-width: 990px) {
+  .scroll-media {
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+  
+  }
+  .scroll-content {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0 0 80%; 
+  }
   
   .thailande,
   .laos,
@@ -108,15 +126,34 @@ section h3 {
     border: 1px solid rgba(0, 0, 0, 0.144);
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgb(76, 74, 74);
+    width: 75%;
   }
   .image {
     margin: 5px 0;
+    width: 580px;
+    height: 370px;
+
   }
   .image img {
-    border-radius: 5px;
+    width: 580px;
+    height: 370px;
+    object-fit: cover;
+  }
+  .homme-kalina img {
+    object-position: 0 0px;
+
   }
 }
 @media screen and (min-width: 1200px) {
+  .thailande,
+  .laos,
+  .vietnam,
+  .guyane {
+    width: 55%;
+  }
   
+  .scroll-content {
+    align-items: center;
+  }
 }
 
